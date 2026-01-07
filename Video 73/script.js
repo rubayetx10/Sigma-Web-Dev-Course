@@ -1,38 +1,38 @@
-function createCard(title, cName, views, date, duration, thumbnail) {
+function createVideoItem(title, channelName, views, daysAgo, duration, thumbnailUrl) {
 
-  // views format
-  let viewStr;
+  // format views
+  let viewText;
   if (views >= 1000000) {
-    viewStr = (views / 1000000).toFixed(1) + "M views";
+    viewText = (views / 1000000).toFixed(1) + "M views";
   } 
   else if (views >= 1000) {
-    viewStr = (views / 1000).toFixed(1) + "K views";
+    viewText = (views / 1000).toFixed(1) + "K views";
   } 
   else {
-    viewStr = views + " views";
+    viewText = views + " views";
   }
 
-  let card = document.createElement("div");
-  card.className = "container";
+  let videoItem = document.createElement("div");
+  videoItem.className = "videoItem";
 
-  card.innerHTML = `
-    <div class="thumbnail">
-      <img src="${thumbnail}">
-      <span class="duration">${duration}</span>
+  videoItem.innerHTML = `
+    <div class="videoThumb">
+      <img src="${thumbnailUrl}">
+      <span class="videoDuration">${duration}</span>
     </div>
 
-    <div class="details">
+    <div class="videoInfo">
       <h3>${title}</h3>
-      <p>${cName}</p>
-      <p>${viewStr} • ${date} days ago</p>
+      <p>${channelName}</p>
+      <p>${viewText} • ${daysAgo} days ago</p>
     </div>
   `;
 
-  document.getElementById("cards").append(card);
+  document.getElementById("videoList").append(videoItem);
 }
 
 // function call
-createCard(
+createVideoItem(
   "Introduction to Backend || Sigma Web Dev Video #73",
   "CodeWithHarry",
   560,
