@@ -11,22 +11,22 @@
       font-family: Arial, sans-serif;
     }
 
-    .container {
+    .videoItem {
       display: flex;
       gap: 15px;
       margin: 20px;
     }
 
-    .thumbnail {
+    .videoThumb {
       position: relative;
     }
 
-    .thumbnail img {
+    .videoThumb img {
       width: 250px;
       border-radius: 8px;
     }
 
-    .duration {
+    .videoDuration {
       position: absolute;
       bottom: 6px;
       right: 6px;
@@ -36,12 +36,12 @@
       border-radius: 4px;
     }
 
-    .details h3 {
+    .videoInfo h3 {
       margin: 0;
       font-size: 16px;
     }
 
-    .details p {
+    .videoInfo p {
       margin: 4px 0;
       font-size: 14px;
       color: #aaa;
@@ -51,10 +51,9 @@
 
 <body>
 
-  <!-- Cards will be added here -->
-  <div id="cards"></div>
+  <!-- All video items will be added here -->
+  <div id="videoList"></div>
 
-  <!-- JS file connected -->
   <script src="script.js"></script>
 </body>
 </html>
